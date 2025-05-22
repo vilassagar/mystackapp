@@ -1,9 +1,10 @@
-
 import React, { useState } from 'react';
-import { Sidebar } from "lucide-react";
 import Footer from "./Footer";
-import Header from "./Header/Header";
+import Header from "./Header";
 import PageRouter from '../../Router';
+
+// Import the Sidebar component explicitly
+import SidebarComponent from "./SideBar";
 
 // Main Layout Component
 const Layout: React.FC = () => {
@@ -16,7 +17,7 @@ const Layout: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-gray-50 flex">
-            <Sidebar
+            <SidebarComponent
                 isOpen={sidebarOpen}
                 onClose={closeSidebar}
                 currentRoute={currentRoute}

@@ -1,4 +1,12 @@
+import React from 'react';
 import { Home, User, Mail, BarChart3, Settings, X } from "lucide-react";
+
+// MenuItem interface
+interface MenuItem {
+    icon: React.ComponentType<{ className?: string }>;
+    label: string;
+    route: string;
+}
 
 // Sidebar Component
 interface SidebarProps {
@@ -57,8 +65,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, currentRoute, onNavi
                                 <button
                                     onClick={() => handleNavigation(item.route)}
                                     className={`w-full flex items-center space-x-3 px-3 md:px-4 py-2 md:py-3 rounded-lg transition-colors text-left text-sm md:text-base ${currentRoute === item.route
-                                            ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-700'
-                                            : 'text-gray-700 hover:bg-gray-100'
+                                        ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-700'
+                                        : 'text-gray-700 hover:bg-gray-100'
                                         }`}
                                 >
                                     <item.icon className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
